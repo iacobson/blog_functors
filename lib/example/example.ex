@@ -57,8 +57,12 @@ defmodule Example do
 
   defp update_price(%{crypto: crypto, price: price}) do
     case @my_database[crypto] do
-      nil -> {:error, "crypto currency not supported: #{crypto}"}
-      _ -> %{crypto => price}
+      nil ->
+        {:error, "crypto currency not supported: #{crypto}"}
+
+      _ ->
+        # save crypto in the database
+        %{crypto => price}
     end
   end
 
