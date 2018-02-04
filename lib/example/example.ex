@@ -67,14 +67,7 @@ defmodule Example do
   end
 
   defp send_to_frontend(crypto) do
-    case crypto do
-      {:error, error} ->
-        # log the error
-        {:error, error}
-
-      _ ->
-        # send update to the front end
-        crypto
-    end
+    IO.puts("sending crypto to frontend")
+    crypto
   end
 end
