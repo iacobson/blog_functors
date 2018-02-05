@@ -21,8 +21,8 @@ defmodule FTPipe do
         {:error, error} ->
           {:error, error}
 
-        _ ->
-          unquote(left) |> unquote(right)
+        left_result ->
+          left_result |> unquote(right)
       end
     end
   end
